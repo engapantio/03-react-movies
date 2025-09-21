@@ -11,6 +11,5 @@ axios.defaults.headers.common['Authorization'] = `Bearer ${tmdbToken}`;
 
 export const fetchMovies = async (query: string): Promise<Movie[]> => {
   const response = await axios.get<MoviesHttpResponse>(`/movie?query=${query}`);
-  console.log(response.data);
   return response.data.results;
 };
